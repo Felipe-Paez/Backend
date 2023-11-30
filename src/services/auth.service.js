@@ -6,7 +6,7 @@ async function registerUser(user) {
 }
 
 async function getUsername(user){
-    const data = UserModel.find({username:user.identifier}, {username: 1})
+    const data = UserModel.find({user:user.identifier}, {user: 1})
     return await data
 }
 
@@ -22,15 +22,9 @@ async function getNumber(user){
 
 
 async function loginUser(user) {
-    const username = await getUsername(user)
     const email =  await getEmail(user)
     if(isNaN(user.identifier)){
-        if(user.identifier == username[0].username){
-        return await UserModel.findOne({username:user.identifier})
-        }
-        else if(user.identifier == email[0].email){
-            console.log(3)
-        }
+        return await UserModel.findOne({email:user.identifier})
     }else{
       return await UserModel.findOne({number:user.identifier})
     }
