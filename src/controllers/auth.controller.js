@@ -1,6 +1,6 @@
 const { generateToken } = require("../helpers/jwt.helper")
 const UserModel = require("../models/user")
-const {registerUser,loginUser,getUsername, getEmail, getNumber, findUserByUsername,} = require("../services/auth.service")
+const {registerUser,loginUser,getUsername, getEmail, getNumber, findUserByEmail,} = require("../services/auth.service")
 
 const { compareSync } = require("bcrypt")
 
@@ -24,10 +24,10 @@ const register = async (req, res) => {
 
 const login = async ( req, res ) => {
   // 1. Obtener los datos requeridos por el login
-  const { username, password } = req.body;         // { 'username': '', password: '', role: '' }
+  const { email, password } = req.body;         // { 'username': '', password: '', role: '' }
 
   // 2. Verificar si el usuario existe (username ==> email)
-  const userFound = await findUserByUsername( username );
+  const userFound = await findUserByEmail( email );
 
   if( ! userFound ) {
       return res.status( 400 ).json({

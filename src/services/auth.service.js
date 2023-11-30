@@ -41,9 +41,9 @@ async function loginUser(user) {
 
 }
 
-async function findUserByUsername( username ) {
+async function findUserByEmail( email ) {
 
-    return await UserModel.findOne({ username }, {
+    return await UserModel.findOne({ email }, {
         // Restricciones: No retornar las siguientes propiedades y sus valores
         createdAt: 0,
         updatedAt: 0,
@@ -51,4 +51,4 @@ async function findUserByUsername( username ) {
     });         // Equivale a: UserModel.find({ username: username });  
 }
 
-module.exports = { registerUser,loginUser,getUsername,getEmail,getNumber, findUserByUsername, }
+module.exports = { registerUser,loginUser,getUsername,getEmail,getNumber, findUserByEmail, }
