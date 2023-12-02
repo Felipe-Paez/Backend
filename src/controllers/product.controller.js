@@ -1,4 +1,4 @@
-const { registerProduct, getOneProductById, getAllProducts, updateOneProductById } = require("../services/product.service")
+const { registerProduct, getOneProductById, getAllProducts, updateOneProductById, getOneProductByName } = require("../services/product.service")
 
 const create = async (req, res) => {
   const inputData = req.body
@@ -17,10 +17,10 @@ const create = async (req, res) => {
   }
 }
 
-const getById = async (req, res) => {
-    const id = req.params.id
+const getByName = async (req, res) => {
+    const name = req.params.name
     try {
-        const data = await getOneProductById( id )
+        const data = await getOneProductByName( name )
         
         res.json({
             ok: true,
@@ -71,4 +71,4 @@ function removeById(req, res) {
    
 }
 
-module.exports = {getAll,updateById,removeById,getById,create}
+module.exports = {getAll,updateById,removeById,getByName,create}
