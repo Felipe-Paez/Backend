@@ -7,6 +7,8 @@ const authUser = ( req, res, next ) => {
     // 1. Obtener el token del header y validar que existe
     const token = req.header( 'X-Token' );
 
+    console.log(token)
+
     if( ! token ) {
         return res.json({
             ok: false,

@@ -11,7 +11,7 @@ const register = async (req, res) => {
     const data = await registerUser( inputData )
     res.json({
         ok: true,
-        data
+        data:data
     })
   } catch (error) {
     console.error( error )
