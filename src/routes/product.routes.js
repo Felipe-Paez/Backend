@@ -1,5 +1,5 @@
 const { Router } = require("express")
-const { create, getById, getAll, removeById, updateById } = require("../controllers/product.controller")
+const { create, getByName, getAll, removeById, updateById } = require("../controllers/product.controller")
 const router = Router()
 console.log("product routes")
 
@@ -8,7 +8,7 @@ router.post("/",create)
 
 router.get("/",getAll)
 
-router.get("/:id",getById)
+router.get("/:name",getByName)
 
 router.delete("/:id",removeById)
 

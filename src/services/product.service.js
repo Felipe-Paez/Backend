@@ -14,8 +14,8 @@ async function registerProduct(product) {
     return await ProductModel.create(product)
 }
 
-async function getOneProductById(id) {
-    return await ProductModel.findById(id)
+async function getOneProductByName(name) {
+    return await ProductModel.findOne({name:name})
 }
 async function updateOneProductById(id, update) {
     return await ProductModel.findOneAndUpdate({_id: id},update,{new: true})
@@ -24,7 +24,7 @@ async function updateOneProductById(id, update) {
 
 module.exports = {
     registerProduct,
-    getOneProductById,
+    getOneProductByName,
     getAllProducts,
     removeOneProductById,
     updateOneProductById

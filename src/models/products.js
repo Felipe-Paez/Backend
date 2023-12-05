@@ -11,17 +11,13 @@ const ProductSchema = new Schema({
         type:Number,
         default: 0
     },
-  
     style:{
         type:String,
         required:true,
         default:"non-category"
     },
-
     urlpfp:String,
-    
     urlbanner: String,
-
     userId:{
         type:String,
         required:false
