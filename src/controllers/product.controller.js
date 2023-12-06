@@ -1,7 +1,12 @@
+const { authUser } = require("../middlewares/validate-user.middleware")
 const { registerProduct, getOneProductById, getAllProducts, updateOneProductById, getOneProductByName } = require("../services/product.service")
 
 const create = async (req, res) => {
   const inputData = req.body
+  const authUser = req.authUser
+
+  inputData.userId = authUser._id
+
   try {
     const data = await registerProduct( inputData )
     res.json({

@@ -11,7 +11,7 @@ app.use(express.json())
 app.use("/api/auth",require("./routes/auth.routes"))
 app.use(
 
-    "/api/products",
+    "/api/portfolio",
     require("./routes/product.routes")
 )
 

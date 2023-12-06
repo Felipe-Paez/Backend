@@ -20,7 +20,7 @@ const ProductSchema = new Schema({
     urlbanner: String,
     userId:{
         type:String,
-        required:false
+        required:true
    }
 },{
   timestamps: true

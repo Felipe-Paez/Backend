@@ -1,10 +1,11 @@
 const { Router } = require("express")
 const { create, getByName, getAll, removeById, updateById } = require("../controllers/product.controller")
+const { authUser } = require("../middlewares/validate-user.middleware")
 const router = Router()
 console.log("product routes")
 
 
-router.post("/",create)
+router.post("/",authUser, create)
 
 router.get("/",getAll)
 
