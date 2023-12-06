@@ -5,7 +5,9 @@ const router = Router()
 console.log("product routes")
 
 
+
 router.post("/",authUser, create)
+
 
 router.get("/",getAll)
 
