@@ -4,7 +4,8 @@ const router = Router()
 console.log("product routes")
 
 
-router.post("/",create)
+router.post("/0"
+,create)
 
 router.get("/",getAll)
 
