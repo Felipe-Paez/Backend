@@ -8,7 +8,6 @@ console.log("product routes")
 
 router.post("/",authUser, create)
 
-
 router.get("/",getAll)
 
 router.get("/:name",getByName)
