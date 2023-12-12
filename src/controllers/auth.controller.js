@@ -62,7 +62,8 @@ const login = async ( req, res ) => {
   // 5. Responder al Cliente enviandole el Token
   res.status( 200 ).json({
       ok: true,
-      token
+      token,
+      userData
   });
 }
 
