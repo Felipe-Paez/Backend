@@ -14,7 +14,7 @@ app.use(
     "/api/portfolio",
     require("./routes/product.routes")
 )
-
+app.use("/api/gallery",require("./routes/gallery.routes"))
 
 dbConection()
 

@@ -1,9 +1,7 @@
 const ProductModel = require("../models/products")
 
 async function getAllProducts() {
-
     return await ProductModel.find()
-
 }
 
 async function removeOneProductById(id) {
