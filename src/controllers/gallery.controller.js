@@ -3,6 +3,7 @@ const { registerImage, getAllImagesByName,removeOneImageById } = require("../ser
 
 const create = async (req, res) => {
   const inputData = req.body
+  console.log(inputData)
   try {
     const data = await registerImage( inputData )
     res.json({
