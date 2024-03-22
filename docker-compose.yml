@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-version: "1"
-services:
-    web:
-       image: node:18
-       working_dir: /app/src
-       volumes: 
-          - ./:/app/src
-       ports: ["4000:4000"]
-       command: npm run dev 
-=======
 version: '3.8'
 
 services:
@@ -26,4 +15,3 @@ services:
     image: mongo:latest
     ports:
       - "27017:27017"
->>>>>>> 5f505f5db4c25e43032dd522ef77a2e28945edb2
