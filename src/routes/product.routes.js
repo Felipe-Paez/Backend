@@ -1,5 +1,5 @@
 const { Router } = require("express")
-const { create, getByName, getAll, removeById, updateById } = require("../controllers/product.controller")
+const { create,createStyles,getAllPortfolios, getByName, getAll, getAllStyles, getAllPortfoliosByStyle, getProduct, removeById, updateById } = require("../controllers/product.controller")
 const { authUser } = require("../middlewares/validate-user.middleware")
 const router = Router()
 console.log("product routes")
@@ -8,9 +8,17 @@ console.log("product routes")
 
 router.post("/",authUser, create)
 
+router.get("/profile/:name",getByName)
+
+router.post("/styles/",createStyles)
+
 router.get("/",getAll)
 
-router.get("/:name",getByName)
+router.get("/styles/",getAllStyles)
+
+router.get("/styles/:style",getAllPortfoliosByStyle)
+
+router.get("/:id", getProduct)
 
 router.delete("/:id",removeById)
 

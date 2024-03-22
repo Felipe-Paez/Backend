@@ -1,11 +1,10 @@
-
-const { registerImage, getAllImagesByName,removeOneImageById } = require("../services/gallery.service")
+const { registerSocial, getAllSocialsByName,removeOneSocialById } = require("../services/socials.service")
 
 const create = async (req, res) => {
   const inputData = req.body
   console.log(inputData)
   try {
-    const data = await registerImage( inputData )
+    const data = await registerSocial( inputData )
     res.json({
         ok: true,
         data
@@ -14,7 +13,7 @@ const create = async (req, res) => {
     console.error( error )
     res.json({
         ok: false,
-        msg: "error al registrar informacion"
+        msg: "error al crear producto"
     })
   }
 }
@@ -22,7 +21,7 @@ const create = async (req, res) => {
 const getAllByName = async (req, res) => {
     const name = req.params.name
     try {
-        const data = await getAllImagesByName( name )
+        const data = await getAllSocialsByName( name )
         
         res.json({
             ok: true,
@@ -36,7 +35,7 @@ const getAllByName = async (req, res) => {
 const removeById = async (req, res) => {
     const id = req.params.id
     try{
-        const data = await removeOneImageById(id)
+        const data = await removeOneSocialById(id)
         res.json({ 
             ok:true
          })

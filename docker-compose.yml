@@ -1,0 +1,9 @@
+version: "1"
+services:
+    web:
+       image: node:18
+       working_dir: /app/src
+       volumes: 
+          - ./:/app/src
+       ports: ["4000:4000"]
+       command: npm run dev 
