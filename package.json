@@ -4,7 +4,7 @@
   "description": "api rest dlink",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/app.js"
+    "dev": "nodemon ./app.js"
   },
   "author": "Your Name or Organization",
   "license": "ISC",
